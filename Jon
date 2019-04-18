@@ -1,0 +1,99 @@
+//Customer Tests by Jon Nicolas
+
+import static org.junit.Assert.*;
+import org.junit.Test;
+
+public class CustomerTest {
+
+	public void Customer (Bank bank, String lastName, String firstName) {
+        this.bank = null;
+        this.customerId = "";
+        this.lastName = "";
+        this.firstName = "";
+    }
+	
+	Customer Cust1 = new Customer() {
+		this.bank = null;
+		this.customerId = "";
+		this.lastName = "Nicolas";
+		this.firstName = "Jon";
+	}
+	
+	@Test
+	public void testGetBank() throws exception {
+		String output = Cust1.bank;
+		assertEquals(null, output);
+	}
+	
+	@Test
+	public void testGetCustomerId() throws exception {
+        String custId = "1";
+        assertEquals("1", custId);
+    }
+	
+	@Test
+	public void testGetLastName() throws exception {
+		String output = Cust1.getLastName();
+		assertEquals("Nicolas", output);
+	}
+	
+	@Test
+	public void testGetFirstName() throws exception {
+		String output = Cust1.getFirstName();
+		assertEquals("Jon", output);
+	}
+	
+	@Test
+	public void testYtdFees() throws exception {
+		double output = 0.0;
+		assertEquals(0.0, output);
+	}
+	
+	@Test
+	public void testYtdInterest() throws exception {
+		double output = 0.0;
+		assertEquals(0.0, output);
+	}
+	
+	@Test
+	public void testSavingsAccout addSavingsAccount(double initBal, String description) throws exception {
+		SavingsAccount output = new SavingsAccount(0.0, "Jon's account");
+		assertEquals(0.0, "Jon's Account,", output);
+	}
+}
+
+//-----------------------------------------------------------------------------------------------------------
+
+//Savings Account Tests by Jon Nicolas
+
+import static org.junit.Assert.*;
+
+//Tests by Jon Nicolas
+
+import org.junit.Test;
+
+public class SavingsAccoutTest {
+
+	@Test
+	public void testSavingsAccount() throws exception {
+		SavingsAccount Save1 = new SavingsAccount(double initialBalance, String customerId, String description) {
+			this.initialBalance = 0.0;
+			this.customerId = "Jon";
+			this.description = "Savings Account";
+			double output1 = this.initialBalance;
+			String output2 = this.customerId;
+			String output3 = this.description;
+		}
+		assertEquals(0.0, output1);
+		assertEquals("Jon", output2);
+		assertEquals("Savings Account", output3);
+	}
+	
+	@Test
+	public void testAddInterestTransaction() throws exception {
+		double rate = DEFAULT_INTEREST_RATE;
+		assertEquals(2.0, rate);
+	}
+
+}
+
